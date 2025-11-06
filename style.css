@@ -1,0 +1,68 @@
+:root {
+    --base:#011717;
+    --emerald:#022828;
+    --white:#fff;
+    --teal:#02C6C6;
+    --raspberry:#BD275D;
+}
+
+* {margin:0;padding:0;}
+
+body {
+    min-height:100vh;
+    background-color:var(--base);
+    color:var(--white);
+    font-family:"Andale Mono";
+}
+
+nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+
+    li {
+        display: inline-block;
+        &:first-of-type{margin-inline-end: 2rem;}
+    }
+}
+
+main {
+    position: relative;
+    max-width: 50rem;
+    min-height: calc(100vh - 8.5rem);
+    margin: 5rem auto 10rem auto;
+
+    > * {margin-block-end: 2rem;}
+
+    li {margin-block-end: 2rem;}
+}
+
+a {text-decoration: none;color: inherit;}
+
+ul {list-style-type: none;}
+
+article.article,
+article.card {
+    view-transition-name: background;
+    background-color: var(--emerald);
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+
+    h1,h2 {view-transition-name: title;}
+
+    p {view-transition-name: description;}
+}
+
+article.card {
+    a {display:block;margin-block-start: 2rem;}
+}
+
+article.article {
+    position:absolute;
+    inset: 0;
+}
+
+::view-transition-new(background),
+::view-transition-old(background) {height: 100%;}
